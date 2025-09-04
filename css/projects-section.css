@@ -183,3 +183,340 @@
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(89, 178, 244, 0.3);
 }
+
+/* ===== RESPONSIVE DESIGN FOR PROJECTS SECTION ===== */
+
+/* Extra Large Devices (1400px and up) */
+@media (min-width: 1400px) {
+  .projects {
+    padding: 12rem 12% 6rem;
+  }
+  
+  .projects-container {
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    gap: 5rem;
+    padding: 0 3rem;
+  }
+  
+  .project-card {
+    height: 550px;
+  }
+  
+  .project-image {
+    height: 20rem;
+  }
+  
+  .project-content {
+    padding: 2.5rem;
+  }
+  
+  .project-overlay i {
+    font-size: 6rem;
+  }
+}
+
+/* Large Devices (1200px and up) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .projects {
+    padding: 11rem 10% 5.5rem;
+  }
+  
+  .projects-container {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 4.5rem;
+  }
+  
+  .project-card {
+    height: 520px;
+  }
+  
+  .project-image {
+    height: 19rem;
+  }
+  
+  .project-content {
+    padding: 2.2rem;
+  }
+}
+
+/* Medium Large Devices (992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .projects {
+    padding: 10rem 8% 5rem;
+  }
+  
+  .projects-container {
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    gap: 3.5rem;
+  }
+  
+  .project-card {
+    height: 480px;
+  }
+  
+  .project-image {
+    height: 16rem;
+  }
+  
+  .project-content {
+    padding: 2rem 1.8rem;
+  }
+  
+  .project-content h3 {
+    font-size: 2.2rem;
+  }
+  
+  .project-content p {
+    font-size: 1.5rem;
+    min-height: 60px;
+  }
+  
+  .projects .heading {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+  }
+}
+
+/* Medium Devices (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .projects {
+    padding: 8rem 6% 4rem;
+  }
+  
+  .projects-container {
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    gap: 3rem;
+    padding: 0 1rem;
+  }
+  
+  .project-card {
+    height: 450px;
+  }
+  
+  .project-image {
+    height: 15rem;
+  }
+  
+  .project-content {
+    padding: 1.8rem 1.5rem;
+  }
+  
+  .project-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .project-content p {
+    font-size: 1.4rem;
+    min-height: 55px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .project-tech {
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .tech-tag {
+    font-size: 1.2rem;
+    padding: 0.4rem 1rem;
+  }
+  
+  .project-btn {
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+  }
+  
+  .projects .heading {
+    font-size: 3.5rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .project-overlay i {
+    font-size: 4rem;
+  }
+}
+
+/* Small Devices (576px to 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .projects {
+    padding: 7rem 5% 3.5rem;
+  }
+  
+  .projects-container {
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap: 2.5rem;
+    padding: 0;
+  }
+  
+  .project-card {
+    height: 420px;
+  }
+  
+  .project-image {
+    height: 14rem;
+  }
+  
+  .project-content {
+    padding: 1.5rem 1.2rem;
+  }
+  
+  .project-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .project-content p {
+    font-size: 1.3rem;
+    min-height: 50px;
+    margin-bottom: 1.2rem;
+  }
+  
+  .project-tech {
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .tech-tag {
+    font-size: 1.1rem;
+    padding: 0.3rem 0.8rem;
+  }
+  
+  .project-btn {
+    padding: 0.8rem 1.8rem;
+    font-size: 1.3rem;
+  }
+  
+  .projects .heading {
+    font-size: 3.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-0.5rem) scale(1.01);
+  }
+}
+
+/* Extra Small Devices (480px to 575px) */
+@media (min-width: 480px) and (max-width: 575px) {
+  .projects {
+    padding: 6rem 4% 3rem;
+  }
+  
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .project-card {
+    height: 400px;
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+  
+  .project-image {
+    height: 13rem;
+  }
+  
+  .project-content {
+    padding: 1.4rem 1rem;
+  }
+  
+  .project-content h3 {
+    font-size: 1.7rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .project-content p {
+    font-size: 1.2rem;
+    min-height: 45px;
+    margin-bottom: 1rem;
+  }
+  
+  .project-tech {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .tech-tag {
+    font-size: 1rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .project-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .projects .heading {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Mobile Devices (320px to 479px) */
+@media (max-width: 479px) {
+  .projects {
+    padding: 5rem 3% 2.5rem;
+  }
+  
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0;
+  }
+  
+  .project-card {
+    height: 380px;
+    max-width: 35rem;
+    margin: 0 auto;
+  }
+  
+  .project-image {
+    height: 12rem;
+  }
+  
+  .project-content {
+    padding: 1.2rem 0.8rem;
+  }
+  
+  .project-content h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.7rem;
+  }
+  
+  .project-content p {
+    font-size: 1.1rem;
+    min-height: 40px;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+  }
+  
+  .project-tech {
+    gap: 0.4rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .project-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 1.1rem;
+  }
+  
+  .projects .heading {
+    font-size: 2.8rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-0.3rem);
+  }
+  
+  .project-overlay i {
+    font-size: 3.5rem;
+  }
+}

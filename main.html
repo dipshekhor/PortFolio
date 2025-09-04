@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/skills-section.css"> 
   <link rel="stylesheet" href="css/projects-section.css"> 
   <link rel="stylesheet" href="css/contact-section.css"> 
+  <link rel="stylesheet" href="css/photography-section.css"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,600&display=swap" rel="stylesheet">
@@ -17,18 +18,22 @@
 <body>
   <header class="header">
     <a href="#home" class="logo">Dip Shekhor Datta</a>
-      <i class="fa-solid fa-bars" id="menu-btn"></i>
     <nav class="navbar">
       <ul>
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="photography.html">Photography</a>
         <a href="#contact">Contact</a>
         <a href="#experience" style="display: none;">Experience</a>
       </ul>
-      </nav>
-   
+    </nav>
+    <div class="hamburger-menu" id="menu-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
   <!-- Home Section -->
   <section class="home" id="home">
@@ -101,31 +106,31 @@
       <h3>Languages</h3>
       <div class="skills-container">
         <div class="skill">
-          <div class="skill-icon"><i class='bx bxl-c-plus-plus'></i></div>
+          <div class="skill-icon"><i class='fab fa-cuttlefish'></i></div>
           <h3>C++</h3>
         </div>
         <div class="skill">
-          <div class="skill-icon"><i class='bx bxl-java'></i></div>
+          <div class="skill-icon"><i class='fab fa-java'></i></div>
           <h3>Java</h3>
         </div>
         <div class="skill">
-          <div class="skill-icon"><i class='bx bxl-php'></i></div>
+          <div class="skill-icon"><i class='fab fa-php'></i></div>
           <h3>PHP</h3>
         </div>
         <div class="skill">
-          <div class="skill-icon"><i class='bx bxl-python'></i></div>
+          <div class="skill-icon"><i class='fab fa-python'></i></div>
           <h3>Python</h3>
         </div>
         <div class="skill">
-          <div class="skill-icon"><i class='bx bxl-javascript'></i></div>
+          <div class="skill-icon"><i class='fab fa-js-square'></i></div>
           <h3>JavaScript</h3>
         </div>
         <div class="skill">
-          <div class="skill-icon"><i class='bx bxl-html5'></i></div>
+          <div class="skill-icon"><i class='fab fa-html5'></i></div>
           <h3>HTML</h3>
         </div>
         <div class="skill">
-          <div class="skill-icon"><i class='bx bxl-css3'></i></div>
+          <div class="skill-icon"><i class='fab fa-css3-alt'></i></div>
           <h3>CSS</h3>
         </div>
       </div>
@@ -134,19 +139,19 @@
       <h3>Frameworks</h3>
       <div class="skills-container">
         <div class="skill">
-          <div class="skill-icon"><i class='bx bxl-react'></i></div>
+          <div class="skill-icon"><i class='fab fa-react'></i></div>
           <h3>React</h3>
         </div>
         <div class="skill">
-          <div class="skill-icon"><i class='bx bxl-nodejs'></i></div>
+          <div class="skill-icon"><i class='fab fa-node-js'></i></div>
           <h3>Node.js</h3>
         </div>
         <div class="skill">
-          <div class="skill-icon"><i class='bx bxl-laravel'></i></div>
+          <div class="skill-icon"><i class='fab fa-laravel'></i></div>
           <h3>Laravel</h3>
         </div>
         <div class="skill">
-          <div class="skill-icon"><i class='bx bxl-django'></i></div>
+          <div class="skill-icon"><i class='fab fa-python'></i></div>
           <h3>Django</h3>
         </div>
       </div>
@@ -155,15 +160,15 @@
       <h3>Tools</h3>
       <div class="skills-container">
         <div class="skill">
-          <div class="skill-icon"><i class='bx bxl-android'></i></div>
+          <div class="skill-icon"><i class='fab fa-android'></i></div>
           <h3>Android Studio</h3>
         </div>
         <div class="skill">
-          <div class="skill-icon"><i class='bx bxs-camera'></i></div>
+          <div class="skill-icon"><i class='fas fa-camera'></i></div>
           <h3>Adobe Lightroom</h3>
         </div>
         <div class="skill">
-          <div class="skill-icon"><i class='bx bxs-video'></i></div>
+          <div class="skill-icon"><i class='fas fa-video'></i></div>
           <h3>Adobe Premiere Pro</h3>
         </div>
       </div>
@@ -311,5 +316,6 @@
   <script src="js/skills.js"></script>
   <script src="js/about.js"></script>
   <script src="js/contact.js"></script>
+  <script src="js/photography.js"></script>
 </body>
 </html>
