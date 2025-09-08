@@ -67,8 +67,28 @@ function openPhotoModal(photoId) {
       const modalLocation = document.getElementById('modalLocation');
       const modalDate = document.getElementById('modalDate');
       const modalDescription = document.getElementById('modalDescription');
+      const modalContent = modal.querySelector('.modal-content');
       
-      if (modalImage) modalImage.src = photo.src;
+      if (modalImage) {
+        modalImage.src = photo.src;
+        
+        // Reset any existing layout classes
+        modalContent.classList.remove('landscape', 'portrait');
+        
+        // Detect image aspect ratio and apply appropriate layout
+        modalImage.onload = function() {
+          const aspectRatio = this.naturalWidth / this.naturalHeight;
+          
+          if (aspectRatio > 1.2) {
+            // Landscape image (width > height)
+            modalContent.classList.add('landscape');
+          } else {
+            // Portrait or square image (height >= width)
+            modalContent.classList.add('portrait');
+          }
+        };
+      }
+      
       if (modalTitle) modalTitle.textContent = photo.title;
       if (modalLocation) modalLocation.textContent = photo.location;
       if (modalDate) modalDate.textContent = photo.date;

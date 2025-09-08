@@ -1,4 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: var(--dark-color);
+  
+}
+:root {
+  --bg-color: #191f36;
+  --secondary-color: #a8bac9;
+  --success-color: #198754;
+  --main-color : #59B2F4;
+  --text-color: #ffffff;
+  --snd-color:#252C41;
+  --secondary-bg-color: #252C41;
+  --font-family-primary: 'Poppins', sans-serif;
+  --font-family-secondary: 'Roboto', sans-serif;
+  --vh: 1vh;
+  --animation-duration: 0.3s;
+  --transition-duration: 0.3s;
+}
 .about-section-container {
   display: grid;
   grid-template-columns:320px 24px 1fr;
@@ -121,17 +151,7 @@
   justify-content: space-between;
   margin-bottom: 2rem;
 }
-/* .minimize-btn {
-  background: #fff;
-  color: #23284a;
-  border: none;
-  border-radius: 2rem;
-  padding: 0.6rem 1.4rem;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(89,178,244,0.12);
-  transition: background 0.2s;
-} */
+
 .btn,
     .minimize-btn,
     .about-tab {
@@ -145,10 +165,7 @@
       box-shadow: 0 2px 8px rgba(89,178,244,0.12);
       transition: background 0.3s, color 0.3s;
     } 
-/* .minimize-btn:hover {
-  background: var(--main-color);
-  color: #fff;
-} */
+
   .btn:hover,
     .minimize-btn:hover,
     .about-tab:hover,
@@ -184,8 +201,6 @@
         display: none;
       }
     }
-
-/* ===== RESPONSIVE DESIGN ===== */
 
 /* Extra Large Devices (1400px and up) */
 @media (min-width: 1400px) {
@@ -560,35 +575,7 @@
     width: 100% !important;
   }
 }
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  border: none;
-  outline: none;
-  scroll-behavior: smooth;
-  font-family: 'Poppins', sans-serif;
-  color: var(--dark-color);
-  
-}
-:root {
-  --bg-color: #191f36;
-  --secondary-color: #a8bac9;
-  --success-color: #198754;
-  --main-color : #59B2F4;
-  --text-color: #ffffff;
-  --snd-color:#252C41;
-  --secondary-bg-color: #252C41;
-  --font-family-primary: 'Poppins', sans-serif;
-  --font-family-secondary: 'Roboto', sans-serif;
-  --vh: 1vh;
-  --animation-duration: 0.3s;
-  --transition-duration: 0.3s;
-}
+
 
 /* Utility Classes for Responsive Design */
 .loaded {

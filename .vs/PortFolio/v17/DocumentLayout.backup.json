@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\New folder\\portFolio\\PortFolio\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9AD971CC-0A1F-486E-8318-A5C1FA9705D2}|portfolio\\portfolio.csproj|e:\\new folder\\portfolio\\portfolio\\portfolio\\main.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{9AD971CC-0A1F-486E-8318-A5C1FA9705D2}|portfolio\\portfolio.csproj|solutionrelative:portfolio\\main.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AD971CC-0A1F-486E-8318-A5C1FA9705D2}|portfolio\\portfolio.csproj|e:\\new folder\\portfolio\\portfolio\\portfolio\\site1.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{9AD971CC-0A1F-486E-8318-A5C1FA9705D2}|portfolio\\portfolio.csproj|solutionrelative:portfolio\\site1.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.aspx",
+              "DocumentMoniker": "E:\\New folder\\portFolio\\portfolio\\portfolio\\main.aspx",
+              "RelativeDocumentMoniker": "portfolio\\main.aspx",
+              "ToolTip": "E:\\New folder\\portFolio\\portfolio\\portfolio\\main.aspx*",
+              "RelativeToolTip": "portfolio\\main.aspx*",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-09-05T11:06:03.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Site1.Master",
+              "DocumentMoniker": "E:\\New folder\\portFolio\\PortFolio\\portfolio\\Site1.Master",
+              "RelativeDocumentMoniker": "portfolio\\Site1.Master",
+              "ToolTip": "E:\\New folder\\portFolio\\PortFolio\\portfolio\\Site1.Master",
+              "RelativeToolTip": "portfolio\\Site1.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-08-30T10:20:39.477Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
