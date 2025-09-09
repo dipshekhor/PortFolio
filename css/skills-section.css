@@ -77,60 +77,6 @@
   color: var(--text-color);
   margin-top: 1rem;
 }
-
-/* .percentage {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--main-color);
-  transition: all 0.3s ease;
-}
-
-.skill:hover .percentage {
-  transform: scale(1.1);
-  color: var(--text-color);
-}
-
-.skill.animate .progress {
-  animation: progressFill 2s ease-in-out forwards;
-}
-
-@keyframes progressFill {
-  from { width: 0; }
-  to { width: var(--progress-width); }
-}
-
-.skill:nth-child(1) .progress-bar {
-  background: linear-gradient(135deg, rgba(255, 87, 87, 0.4), rgba(255, 87, 87, 0.2));
-  border-color: rgba(255, 87, 87, 0.6);
-}
-.skill:nth-child(2) .progress-bar {
-  background: linear-gradient(135deg, rgba(54, 185, 176, 0.4), rgba(54, 185, 176, 0.2));
-  border-color: rgba(54, 185, 176, 0.6);
-}
-.skill:nth-child(3) .progress-bar {
-  background: linear-gradient(135deg, rgba(255, 206, 84, 0.4), rgba(255, 206, 84, 0.2));
-  border-color: rgba(255, 206, 84, 0.6);
-}
-.skill:nth-child(4) .progress-bar {
-  background: linear-gradient(135deg, rgba(97, 218, 251, 0.4), rgba(97, 218, 251, 0.2));
-  border-color: rgba(97, 218, 251, 0.6);
-}
-.skill:nth-child(5) .progress-bar {
-  background: linear-gradient(135deg, rgba(104, 159, 56, 0.4), rgba(104, 159, 56, 0.2));
-  border-color: rgba(104, 159, 56, 0.6);
-}
-.skill:nth-child(6) .progress-bar {
-  background: linear-gradient(135deg, rgba(255, 212, 59, 0.4), rgba(255, 212, 59, 0.2));
-  border-color: rgba(255, 212, 59, 0.6);
-}
-.skill:nth-child(7) .progress-bar {
-  background: linear-gradient(135deg, rgba(162, 155, 254, 0.4), rgba(162, 155, 254, 0.2));
-  border-color: rgba(162, 155, 254, 0.6);
-} */
-
-/* ===== RESPONSIVE DESIGN FOR SKILLS SECTION ===== */
-
-/* Extra Large Devices (1400px and up) */
 @media (min-width: 1400px) {
   .skills {
     padding: 12rem 12% 6rem;

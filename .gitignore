@@ -1,0 +1,58 @@
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# Visual Studio cache files
+*.cache
+*.ilk
+*.log
+*.lib
+*.sbr
+*.sdf
+*.opensdf
+*.unsuccessfulbuild
+*.vcxproj.filters
+*.vcxproj.user
+
+# NuGet Packages
+*.nupkg
+packages/
+**/packages/*
+*.nuget.props
+*.nuget.targets
+
+# Visual Studio Code
+.vscode/
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Node.js
+node_modules/
+npm-debug.log*

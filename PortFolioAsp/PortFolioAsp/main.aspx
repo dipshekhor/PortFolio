@@ -1,0 +1,300 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="main.aspx.cs" Inherits="PortFolioAsp.main" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ds Datta</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Custom & Icon Fonts -->
+  <link rel="stylesheet" href="Resources/css/styles.css"> 
+  <link rel="stylesheet" href="Resources/css/skills-section.css"> 
+  <link rel="stylesheet" href="Resources/css/projects-section.css"> 
+  <link rel="stylesheet" href="Resources/css/contact-section.css"> 
+  <link rel="stylesheet" href="Resources/css/photography-section.css">
+  <link rel="stylessheet" href="Resources/css/education-section.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,600&display=swap" rel="stylesheet">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+  <header class="header">
+    <a href="#home" class="logo">Dip Shekhor Datta</a>
+    <nav class="navbar">
+      <ul>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="photography.aspx">Photography</a>
+        <a href="#contact">Contact</a>
+        <a href="#experience" style="display: none;">Experience</a>
+      </ul>
+    </nav>
+    <div class="hamburger-menu" id="menu-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+  <!-- Home Section -->
+  <section class="home" id="home">
+    <div class="content">
+      <h3>Hi, I am</h3>
+      <h1>Dip Shekhor Datta</h1>
+      <h3><span> A 3rd Year CS Student with an Exploring Mentality</span></h3>
+      <p>Welcome to my portfolio! I am a passionate Computer Science student with an insatiable curiosity for technology and innovation. My journey in the world of programming is driven by exploration, continuous learning, and the desire to capture and create meaningful digital experiences.</p>
+      <p>Explore my learning journey, projects, and the technologies I'm mastering as I grow in the field of Computer Science.</p>
+
+      <div class="social-platforms">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      
+      <div class="btn-group">
+        <a href="#contact" class="btn">View My Resume</a>
+      </div>
+
+    </div>
+    <div class="homepage-img">
+        <img src="Resources/images/myself2.jpg" />
+      
+    </div>
+    
+  </section>
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="about-section-container">
+      <div class="about-img">
+        <img src="Resources/images/dip.jpg" alt="About Image">
+      </div>
+      <div class="about-divider"></div>
+      <div class="about-content-box">
+        <div class="about-overview" id="about-overview">
+          <h2 class="heading">ABOUT<span> Me</span></h2>
+          <h3>Computer Science Student & Tech Explorer</h3>
+          <p>I am a dedicated Computer Science student in my 3rd year with a passion for exploring emerging technologies and innovative solutions. My academic journey has ignited a deep fascination for programming, algorithms, and the endless possibilities that technology offers to shape our world.</p>
+              <a class="btn" href="education.aspx">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <h2 class="heading">My<span> Skills</span></h2>
+    <div class="skills-subsection">
+      <h3>Languages</h3>
+      <div class="skills-container">
+        <div class="skill">
+          <div class="skill-icon"><i class='fab fa-cuttlefish'></i></div>
+          <h3>C++</h3>
+        </div>
+        <div class="skill">
+          <div class="skill-icon"><i class='fab fa-java'></i></div>
+          <h3>Java</h3>
+        </div>
+        <div class="skill">
+          <div class="skill-icon"><i class='fab fa-php'></i></div>
+          <h3>PHP</h3>
+        </div>
+        <div class="skill">
+          <div class="skill-icon"><i class='fab fa-python'></i></div>
+          <h3>Python</h3>
+        </div>
+        <div class="skill">
+          <div class="skill-icon"><i class='fab fa-js-square'></i></div>
+          <h3>JavaScript</h3>
+        </div>
+        <div class="skill">
+          <div class="skill-icon"><i class='fab fa-html5'></i></div>
+          <h3>HTML</h3>
+        </div>
+        <div class="skill">
+          <div class="skill-icon"><i class='fab fa-css3-alt'></i></div>
+          <h3>CSS</h3>
+        </div>
+      </div>
+    </div>
+    <div class="skills-subsection">
+      <h3>Frameworks</h3>
+      <div class="skills-container">
+        <div class="skill">
+          <div class="skill-icon"><i class='fab fa-react'></i></div>
+          <h3>React</h3>
+        </div>
+        <div class="skill">
+          <div class="skill-icon"><i class='fab fa-node-js'></i></div>
+          <h3>Node.js</h3>
+        </div>
+        <div class="skill">
+          <div class="skill-icon"><i class='fab fa-laravel'></i></div>
+          <h3>Laravel</h3>
+        </div>
+        <div class="skill">
+          <div class="skill-icon"><i class='fab fa-python'></i></div>
+          <h3>Django</h3>
+        </div>
+      </div>
+    </div>
+    <div class="skills-subsection">
+      <h3>Tools</h3>
+      <div class="skills-container">
+        <div class="skill">
+          <div class="skill-icon"><i class='fab fa-android'></i></div>
+          <h3>Android Studio</h3>
+        </div>
+        <div class="skill">
+          <div class="skill-icon"><i class='fas fa-camera'></i></div>
+          <h3>Adobe Lightroom</h3>
+        </div>
+        <div class="skill">
+          <div class="skill-icon"><i class='fas fa-video'></i></div>
+          <h3>Adobe Premiere Pro</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <h2 class="heading">My<span> Projects</span></h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <div class="project-image">
+          <img src="Resources/images/screencapture-127-0-0-1-5500-PortFolio-main-html-2025-08-01-21_47_24.png" alt="Project 1">
+          <div class="project-overlay">
+            <a href="https://github.com/dipshekhor/portfolio" target="_blank" class="project-overlay-link"><i class='bx bx-link-external'></i></a>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>Web Portfolio</h3>
+          <p>A responsive personal portfolio website built with HTML, CSS, and JavaScript featuring modern design and smooth animations.</p>
+          <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+          </div>
+          <a href="https://github.com/dipshekhor/portfolio" target="_blank" class="btn project-btn">Read More</a>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-image">
+          <img src="Resources/images/Screenshot 2025-08-09 124843.png" alt="Project 2">
+          <div class="project-overlay">
+            <a href="https://github.com/dipshekhor/EmployeeManagementSystem" target="_blank" class="project-overlay-link"><i class='bx bx-link-external'></i></a>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>Employee Management System App For Desktop</h3>
+          <p>An employee management application with user authentication, real-time updates, and intuitive drag-and-drop functionality.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">JavaFX</span>
+            <span class="tech-tag">MySQL</span>
+          </div>
+          <a href="https://github.com/dipshekhor/EmployeeManagementSystem" target="_blank" class="btn project-btn">Read More</a>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-image">
+          <img src="../../images/project3.jpg" alt="Project 3">
+          <div class="project-overlay">
+            <a href="https://github.com/dipshekhor/ecommerce" target="_blank" class="project-overlay-link"><i class='bx bx-link-external'></i></a>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>E-Commerce Platform</h3>
+          <p>A modern e-commerce solution with shopping cart, payment integration, and admin dashboard for inventory management.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">PostgreSQL</span>
+          </div>
+          <a href="https://github.com/dipshekhor/ecommerce" target="_blank" class="btn project-btn">Read More</a>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-image">
+          <img src="../../images/project4.jpg" alt="Project 4">
+          <div class="project-overlay">
+            <a href="https://github.com/dipshekhor/chat-app" target="_blank" class="project-overlay-link"><i class='bx bx-link-external'></i></a>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>Mobile Chat App</h3>
+          <p>A real-time messaging application for Android with features like group chats, media sharing, and end-to-end encryption.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Android</span>
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">Firebase</span>
+          </div>
+          <a href="https://github.com/dipshekhor/chat-app" target="_blank" class="btn project-btn">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2 class="heading">Contact<span> Me</span></h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class='bx bxs-phone'></i>
+          </div>
+          <h3>Phone</h3>
+          <p>+880 1772895851</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class='bx bxs-envelope'></i>
+          </div>
+          <h3>Email</h3>
+          <p>dipshekhordatta@gmail.com</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class='bx bxs-location-plus'></i>
+          </div>
+          <h3>Location</h3>
+          <p>Khulna, Bangladesh</p>
+        </div>
+      </div>
+      <div class="contact-form">
+        <form id="contactForm">
+          <div class="input-group">
+            <input type="text" id="name" name="name" required>
+            <label for="name">Your Name</label>
+          </div>
+          <div class="input-group">
+            <input type="email" id="email" name="email" required>
+            <label for="email">Your Email</label>
+          </div>
+          <div class="input-group">
+            <input type="text" id="subject" name="subject" required>
+            <label for="subject">Subject</label>
+          </div>
+          <div class="input-group">
+            <textarea id="message" name="message" rows="6" required></textarea>
+            <label for="message">Your Message</label>
+          </div>
+          <button type="submit" class="btn contact-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Bootstrap bundle JS (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous"></script>
+  <!-- Custom JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="Resources/js/main.js"></script>
+  <script src="Resources/js/skills.js"></script>
+  <script src="Resources/js/about.js"></script>
+  <script src="Resources/js/contact.js"></script>
+  <script src="Resources/js/photography.js"></script>
+</asp:Content>

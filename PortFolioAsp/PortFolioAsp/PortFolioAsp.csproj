@@ -1,0 +1,199 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{04003AB9-713D-49B9-91C7-89FEC1B3201F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PortFolioAsp</RootNamespace>
+    <AssemblyName>PortFolioAsp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44389</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin.aspx" />
+    <Content Include="education.aspx" />
+    <Content Include="main.aspx" />
+    <Content Include="photography.aspx" />
+    <Content Include="Resources\css\contact-section.css" />
+    <Content Include="Resources\css\education-section.css" />
+    <Content Include="Resources\css\photography-section.css" />
+    <Content Include="Resources\css\projects-section.css" />
+    <Content Include="Resources\css\skills-section.css" />
+    <Content Include="Resources\css\styles.css" />
+    <Content Include="Resources\images\A&amp;N_01_Dip Shekhor Datta_One River,thousands of stories_KUET_01772895851_dips8137%40gmail.com.jpg" />
+    <Content Include="Resources\images\dip.jpg" />
+    <Content Include="Resources\images\DSC01789.jpg" />
+    <Content Include="Resources\images\football.jpg" />
+    <Content Include="Resources\images\image.png" />
+    <Content Include="Resources\images\myself.jpg" />
+    <Content Include="Resources\images\myself2.jpg" />
+    <Content Include="Resources\images\screencapture-127-0-0-1-5500-PortFolio-main-html-2025-08-01-21_47_24.png" />
+    <Content Include="Resources\images\Screenshot 2025-08-09 124843.png" />
+    <Content Include="Resources\images\Single_Color_03_Dip Shekhor Datta_বিশ্বস্ততা_KUET_01772895851_dips8137%40gmail.com.jpg" />
+    <Content Include="Resources\images\Single_Color_04_Dip Shekhor Datta_Finally,I have done it !_KUET_01772895851_dips8137%40gmail.com.jpg" />
+    <Content Include="Resources\images\Single_Color_05_Dip Shekhor Datta_মমতাময়ী মা_KUET_01772895851_dips8137%40gmail.com.jpg" />
+    <Content Include="Resources\images\Single_Color_07_Dip Shekhor Datta_Football in a beach_KUET_01772895851_dips8137%40gmail.com.jpg" />
+    <Content Include="Resources\images\Single_Color_08_Dip Shekhor Datta_Holy and harmony_KUET_01772895851_dips8137%40gmail.com.jpg" />
+    <Content Include="Resources\images\Single_Color_09_Dip Shekhor Datta_ডানপিঠে শৈশব_KUET_01772895851_dips8137%40gmail.com.jpg" />
+    <Content Include="Resources\images\Single_Color_10_Dip Shekhor Datta_Their sibling bond and innocence make their laughter rise higher than the waves_KUET_01772895851_dips8137%40gmail.com.jpg" />
+    <Content Include="Resources\js\about.js" />
+    <Content Include="Resources\js\contact.js" />
+    <Content Include="Resources\js\main.js" />
+    <Content Include="Resources\js\photography.js" />
+    <Content Include="Resources\js\skills.js" />
+    <Content Include="Web.config" />
+    <Content Include="login.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="admin.aspx.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin.aspx.designer.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="education.aspx.cs">
+      <DependentUpon>education.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="education.aspx.designer.cs">
+      <DependentUpon>education.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main.aspx.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main.aspx.designer.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="photography.aspx.cs">
+      <DependentUpon>photography.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="photography.aspx.designer.cs">
+      <DependentUpon>photography.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Site1.Master" />
+    <Content Include="Resources\images\2107047.HEIC" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2065</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44389/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

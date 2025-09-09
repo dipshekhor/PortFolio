@@ -38,14 +38,13 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-    // Simulate form submission (replace with your actual form handling)
     const submitButton = contactForm.querySelector('.contact-btn');
     const originalText = submitButton.textContent;
     
     submitButton.textContent = 'Sending...';
     submitButton.disabled = true;
 
-    // Simulate API call
+    
     setTimeout(() => {
       alert('Message sent successfully! I will get back to you soon.');
       contactForm.reset();
