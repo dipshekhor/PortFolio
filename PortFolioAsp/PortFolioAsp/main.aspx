@@ -14,6 +14,48 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Contact Form Status Messages */
+    .contact-status {
+      display: block;
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: center;
+    }
+    
+    .contact-status.success {
+      background-color: rgba(40, 167, 69, 0.1);
+      color: #28a745;
+      border: 1px solid rgba(40, 167, 69, 0.3);
+    }
+    
+    .contact-status.error {
+      background-color: rgba(220, 53, 69, 0.1);
+      color: #dc3545;
+      border: 1px solid rgba(220, 53, 69, 0.3);
+    }
+    
+    /* Ensure ASP.NET controls inherit form styling */
+    .form-input {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-bottom: 2px solid #ddd;
+      background: transparent;
+      font-size: 1rem;
+      color: #333;
+      transition: border-color 0.3s ease;
+    }
+    
+    .form-input:focus {
+      outline: none;
+      border-bottom-color: #007bff;
+    }
+  </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
   <header class="header">
@@ -265,25 +307,26 @@
         </div>
       </div>
       <div class="contact-form">
-        <form id="contactForm">
+        <div class="form-container">
           <div class="input-group">
-            <input type="text" id="name" name="name" required>
-            <label for="name">Your Name</label>
+            <asp:TextBox ID="txtContactName" runat="server" CssClass="form-input" required="true"></asp:TextBox>
+            <label for="<%= txtContactName.ClientID %>">Your Name</label>
           </div>
           <div class="input-group">
-            <input type="email" id="email" name="email" required>
-            <label for="email">Your Email</label>
+            <asp:TextBox ID="txtContactEmail" runat="server" TextMode="Email" CssClass="form-input" required="true"></asp:TextBox>
+            <label for="<%= txtContactEmail.ClientID %>">Your Email</label>
           </div>
           <div class="input-group">
-            <input type="text" id="subject" name="subject" required>
-            <label for="subject">Subject</label>
+            <asp:TextBox ID="txtContactSubject" runat="server" CssClass="form-input" required="true"></asp:TextBox>
+            <label for="<%= txtContactSubject.ClientID %>">Subject</label>
           </div>
           <div class="input-group">
-            <textarea id="message" name="message" rows="6" required></textarea>
-            <label for="message">Your Message</label>
+            <asp:TextBox ID="txtContactMessage" runat="server" TextMode="MultiLine" Rows="6" CssClass="form-input" required="true"></asp:TextBox>
+            <label for="<%= txtContactMessage.ClientID %>">Your Message</label>
           </div>
-          <button type="submit" class="btn contact-btn">Send Message</button>
-        </form>
+          <asp:Button ID="btnSendMessage" runat="server" Text="Send Message" CssClass="btn contact-btn" OnClick="btnSendMessage_Click" />
+          <asp:Label ID="lblContactMessage" runat="server" CssClass="contact-status" Visible="false"></asp:Label>
+        </div>
       </div>
     </div>
   </section>

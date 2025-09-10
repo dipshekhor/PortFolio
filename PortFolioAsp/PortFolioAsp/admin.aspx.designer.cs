@@ -9,9 +9,263 @@
 
 namespace PortFolioAsp
 {
-
-
     public partial class admin
     {
+        /// <summary>
+        /// btnLogout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLogout;
+
+        /// <summary>
+        /// lblUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUsername;
+
+        /// <summary>
+        /// lblLoginTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLoginTime;
+
+        /// <summary>
+        /// lblMessageCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessageCount;
+
+        // Projects Section Controls
+        /// <summary>
+        /// txtProjectTitle control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.TextBox txtProjectTitle;
+
+        /// <summary>
+        /// ddlProjectType control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.DropDownList ddlProjectType;
+
+        /// <summary>
+        /// txtTechnologies control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.TextBox txtTechnologies;
+
+        /// <summary>
+        /// txtProjectUrl control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.TextBox txtProjectUrl;
+
+        /// <summary>
+        /// txtProjectDescription control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.TextBox txtProjectDescription;
+
+        /// <summary>
+        /// btnAddProject control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.Button btnAddProject;
+
+        /// <summary>
+        /// btnUpdateProject control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.Button btnUpdateProject;
+
+        /// <summary>
+        /// btnDeleteProject control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.Button btnDeleteProject;
+
+        /// <summary>
+        /// gvProjects control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.GridView gvProjects;
+
+        // Skills Section Controls
+        /// <summary>
+        /// txtSkillName control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.TextBox txtSkillName;
+
+        /// <summary>
+        /// ddlSkillCategory control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSkillCategory;
+
+        /// <summary>
+        /// txtSkillLevel control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.TextBox txtSkillLevel;
+
+        /// <summary>
+        /// btnAddSkill control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.Button btnAddSkill;
+
+        /// <summary>
+        /// btnUpdateSkill control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.Button btnUpdateSkill;
+
+        /// <summary>
+        /// btnDeleteSkill control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.Button btnDeleteSkill;
+
+        /// <summary>
+        /// gvSkills control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.GridView gvSkills;
+
+        // Education Section Controls
+        /// <summary>
+        /// txtInstitution control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.TextBox txtInstitution;
+
+        /// <summary>
+        /// txtDegree control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.TextBox txtDegree;
+
+        /// <summary>
+        /// txtFieldOfStudy control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.TextBox txtFieldOfStudy;
+
+        /// <summary>
+        /// txtStartYear control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.TextBox txtStartYear;
+
+        /// <summary>
+        /// txtEndYear control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.TextBox txtEndYear;
+
+        /// <summary>
+        /// txtGrade control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.TextBox txtGrade;
+
+        /// <summary>
+        /// btnAddEducation control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.Button btnAddEducation;
+
+        /// <summary>
+        /// btnUpdateEducation control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.Button btnUpdateEducation;
+
+        /// <summary>
+        /// btnDeleteEducation control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.Button btnDeleteEducation;
+
+        /// <summary>
+        /// gvEducation control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.GridView gvEducation;
+
+        // Photography Section Controls
+        /// <summary>
+        /// txtPhotoTitle control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.TextBox txtPhotoTitle;
+
+        /// <summary>
+        /// ddlPhotoCategory control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.DropDownList ddlPhotoCategory;
+
+        /// <summary>
+        /// txtPhotoDescription control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.TextBox txtPhotoDescription;
+
+        /// <summary>
+        /// txtPhotoPath control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.TextBox txtPhotoPath;
+
+        /// <summary>
+        /// btnAddPhoto control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.Button btnAddPhoto;
+
+        /// <summary>
+        /// btnUpdatePhoto control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.Button btnUpdatePhoto;
+
+        /// <summary>
+        /// btnDeletePhoto control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.Button btnDeletePhoto;
+
+        /// <summary>
+        /// gvPhotography control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.GridView gvPhotography;
+
+        // Contact Messages Section Controls
+        /// <summary>
+        /// gvContacts control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.GridView gvContacts;
+
+        /// <summary>
+        /// btnDeleteMessage control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.Button btnDeleteMessage;
+
+        /// <summary>
+        /// btnRefreshMessages control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.Button btnRefreshMessages;
+
+        // Settings Section Controls
+        /// <summary>
+        /// txtCurrentPassword control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.TextBox txtCurrentPassword;
+
+        /// <summary>
+        /// txtNewPassword control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.TextBox txtNewPassword;
+
+        /// <summary>
+        /// txtConfirmPassword control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
+
+        /// <summary>
+        /// txtEmail control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+
+        /// <summary>
+        /// btnUpdatePassword control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.Button btnUpdatePassword;
+
+        /// <summary>
+        /// btnUpdateEmail control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.Button btnUpdateEmail;
     }
 }

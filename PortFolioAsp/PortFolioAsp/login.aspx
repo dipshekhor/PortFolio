@@ -82,21 +82,40 @@
             align-items: center;
         }
 
-        .form-group i {
+        .form-group i.fa-user,
+        .form-group i.fa-lock {
             position: absolute;
             left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
             color: #59b2f4;
             font-size: 1.8rem;
             z-index: 2;
         }
 
+        .form-group .toggle-password {
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #858383;
+            font-size: 1.6rem;
+            cursor: pointer;
+            z-index: 3;
+            transition: color 0.3s ease;
+        }
+
+        .form-group .toggle-password:hover {
+            color: #59b2f4;
+        }
+
         .form-group input {
             width: 100%;
-            padding: 1.5rem 2rem 1.5rem 5rem;
-            background: transparent;
+            padding: 1.5rem 5rem 1.5rem 5rem;
+            background: transparent !important;
             border: 2px solid rgba(89, 178, 244, 0.3);
             border-radius: 1rem;
-            color: #ffffff;
+            color: #ffffff !important;
             font-size: 1.6rem;
             transition: all 0.3s ease;
             box-sizing: border-box;
@@ -106,6 +125,13 @@
             outline: none;
             border-color: #59b2f4;
             box-shadow: 0 0 15px rgba(89, 178, 244, 0.3);
+            background: transparent !important;
+            color: #ffffff !important;
+        }
+
+        .form-group input:valid {
+            background: transparent !important;
+            color: #ffffff !important;
         }
 
         .form-group input:focus ~ label,
@@ -196,7 +222,7 @@
             }
 
             .form-group input {
-                padding: 1.3rem 1.8rem 1.3rem 4.5rem;
+                padding: 1.3rem 4.5rem 1.3rem 4.5rem;
                 font-size: 1.4rem;
             }
 
@@ -205,9 +231,15 @@
                 left: 4.5rem;
             }
 
-            .form-group i {
+            .form-group i.fa-user,
+            .form-group i.fa-lock {
                 left: 1.5rem;
                 font-size: 1.6rem;
+            }
+
+            .form-group .toggle-password {
+                right: 1.2rem;
+                font-size: 1.4rem;
             }
         }
 
@@ -221,7 +253,7 @@
             }
 
             .form-group input {
-                padding: 1.2rem 1.5rem 1.2rem 4rem;
+                padding: 1.2rem 4rem 1.2rem 4rem;
                 font-size: 1.3rem;
             }
 
@@ -230,9 +262,15 @@
                 left: 4rem;
             }
 
-            .form-group i {
+            .form-group i.fa-user,
+            .form-group i.fa-lock {
                 left: 1.3rem;
                 font-size: 1.5rem;
+            }
+
+            .form-group .toggle-password {
+                right: 1.1rem;
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -258,7 +296,8 @@
                     <div class="input-container">
                         <i class='fas fa-lock'></i>
                         <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" placeholder=" " required="true"></asp:TextBox>
-                        <label">Password</label>
+                        <label>Password</label>
+                        <i class='fas fa-eye toggle-password' id="togglePassword" onclick="togglePasswordVisibility()"></i>
                     </div>
                 </div>
                 
@@ -279,4 +318,21 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById('<%= txtPassword.ClientID %>');
+            const toggleIcon = document.getElementById('togglePassword');
+            
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        }
+    </script>
 </asp:Content>

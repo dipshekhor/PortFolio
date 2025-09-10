@@ -37,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
       alert('Please enter a valid email address');
       return;
     }
-
     const submitButton = contactForm.querySelector('.contact-btn');
     const originalText = submitButton.textContent;
     
