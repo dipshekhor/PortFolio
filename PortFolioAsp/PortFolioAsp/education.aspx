@@ -32,41 +32,17 @@
     <div class="education-timeline">
       <div class="timeline-main-branch"></div>
       <div class="education-cards">
-        <div class="education-card">
-          <h3><i class="fas fa-graduation-cap"></i> Bachelor's Degree (Undergraduate)</h3>
-          <h4>Khulna University of Engineering & Technology (KUET)</h4>
-          <p class="institution">University</p>
-          <div class="year">2020 - Present</div>
-          <p class="description">
-            Currently pursuing my undergraduate degree in engineering.
-            Gaining comprehensive knowledge in technical subjects and practical applications.
-            Engaging in research projects and academic excellence.
-          </p>
-        </div>
-        <div class="education-card">
-          <h3><i class="fas fa-school"></i> Higher Secondary Certificate (HSC)</h3>
-          <h4>Dhaka Residential Model College</h4>
-          <p class="institution">College</p>
-          <div class="year">2018 - 2020</div>
-          <div class="grade">Grade: A+ (GPA 5.00)</div>
-          <p class="description">
-            Completed higher secondary education with science background.
-            Focused on advanced mathematics, physics, chemistry, and biology.
-            Achieved excellent academic results and prepared for university entrance.
-          </p>
-        </div>
-        <div class="education-card">
-          <h3><i class="fas fa-book"></i> Secondary School Certificate (SSC)</h3>
-          <h4>Sachar High School</h4>
-          <p class="institution">High School</p>
-          <div class="year">2016 - 2018</div>
-          <div class="grade">Grade: A (GPA 4.50)</div>
-          <p class="description">
-            Completed secondary education with strong foundation in core subjects.
-            Developed analytical thinking and problem-solving skills.
-            Participated in various academic and extracurricular activities.
-          </p>
-        </div>
+        <asp:Repeater ID="rptEducation" runat="server">
+          <ItemTemplate>
+            <div class="education-card">
+              <h3><i class="fas fa-graduation-cap"></i> <%# Eval("Degree") %></h3>
+              <h4><%# Eval("Institution") %></h4>
+              <p class="institution"><%# Eval("Field") %></p>
+              <div class="year"><%# Eval("StartYear") %> - <%# Eval("EndYear") %></div>
+              <div class="grade">Grade: <%# Eval("Grade") %></div>
+            </div>
+          </ItemTemplate>
+        </asp:Repeater>
       </div>
     </div>
     <a href="main.aspx#about" class="btn" style="margin-top:2rem;">&larr; Back to About</a>

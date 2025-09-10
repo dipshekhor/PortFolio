@@ -201,81 +201,26 @@
   <section class="projects" id="projects">
     <h2 class="heading">My<span> Projects</span></h2>
     <div class="projects-container">
-      <div class="project-card">
-        <div class="project-image">
-          <img src="Resources/images/screencapture-127-0-0-1-5500-PortFolio-main-html-2025-08-01-21_47_24.png" alt="Project 1">
-          <div class="project-overlay">
-            <a href="https://github.com/dipshekhor/portfolio" target="_blank" class="project-overlay-link"><i class='bx bx-link-external'></i></a>
+      <asp:Repeater ID="rptProjects" runat="server">
+        <ItemTemplate>
+          <div class="project-card">
+            <div class="project-image">
+              <img src='<%# Eval("ImagePath") %>' alt='<%# Eval("Title") %>'>
+              <div class="project-overlay">
+                <a href='<%# Eval("URL") %>' target="_blank" class="project-overlay-link"><i class='bx bx-link-external'></i></a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3><%# Eval("Title") %></h3>
+              <p><%# Eval("Description") %></p>
+              <div class="project-tech">
+                <%# GetTechTags(Eval("Technologies").ToString()) %>
+              </div>
+              <a href='<%# Eval("URL") %>' target="_blank" class="btn project-btn">Read More</a>
+            </div>
           </div>
-        </div>
-        <div class="project-content">
-          <h3>Web Portfolio</h3>
-          <p>A responsive personal portfolio website built with HTML, CSS, and JavaScript featuring modern design and smooth animations.</p>
-          <div class="project-tech">
-            <span class="tech-tag">HTML</span>
-            <span class="tech-tag">CSS</span>
-            <span class="tech-tag">JavaScript</span>
-          </div>
-          <a href="https://github.com/dipshekhor/portfolio" target="_blank" class="btn project-btn">Read More</a>
-        </div>
-      </div>
-      
-      <div class="project-card">
-        <div class="project-image">
-          <img src="Resources/images/Screenshot 2025-08-09 124843.png" alt="Project 2">
-          <div class="project-overlay">
-            <a href="https://github.com/dipshekhor/EmployeeManagementSystem" target="_blank" class="project-overlay-link"><i class='bx bx-link-external'></i></a>
-          </div>
-        </div>
-        <div class="project-content">
-          <h3>Employee Management System App For Desktop</h3>
-          <p>An employee management application with user authentication, real-time updates, and intuitive drag-and-drop functionality.</p>
-          <div class="project-tech">
-            <span class="tech-tag">Java</span>
-            <span class="tech-tag">JavaFX</span>
-            <span class="tech-tag">MySQL</span>
-          </div>
-          <a href="https://github.com/dipshekhor/EmployeeManagementSystem" target="_blank" class="btn project-btn">Read More</a>
-        </div>
-      </div>
-      
-      <div class="project-card">
-        <div class="project-image">
-          <img src="../../images/project3.jpg" alt="Project 3">
-          <div class="project-overlay">
-            <a href="https://github.com/dipshekhor/ecommerce" target="_blank" class="project-overlay-link"><i class='bx bx-link-external'></i></a>
-          </div>
-        </div>
-        <div class="project-content">
-          <h3>E-Commerce Platform</h3>
-          <p>A modern e-commerce solution with shopping cart, payment integration, and admin dashboard for inventory management.</p>
-          <div class="project-tech">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Django</span>
-            <span class="tech-tag">PostgreSQL</span>
-          </div>
-          <a href="https://github.com/dipshekhor/ecommerce" target="_blank" class="btn project-btn">Read More</a>
-        </div>
-      </div>
-      
-      <div class="project-card">
-        <div class="project-image">
-          <img src="../../images/project4.jpg" alt="Project 4">
-          <div class="project-overlay">
-            <a href="https://github.com/dipshekhor/chat-app" target="_blank" class="project-overlay-link"><i class='bx bx-link-external'></i></a>
-          </div>
-        </div>
-        <div class="project-content">
-          <h3>Mobile Chat App</h3>
-          <p>A real-time messaging application for Android with features like group chats, media sharing, and end-to-end encryption.</p>
-          <div class="project-tech">
-            <span class="tech-tag">Android</span>
-            <span class="tech-tag">Java</span>
-            <span class="tech-tag">Firebase</span>
-          </div>
-          <a href="https://github.com/dipshekhor/chat-app" target="_blank" class="btn project-btn">Read More</a>
-        </div>
-      </div>
+        </ItemTemplate>
+      </asp:Repeater>
     </div>
   </section>
   

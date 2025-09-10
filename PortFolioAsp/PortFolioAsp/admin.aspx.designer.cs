@@ -47,6 +47,24 @@ namespace PortFolioAsp
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMessageCount;
 
+        /// <summary>
+        /// lblProjectCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblProjectCount;
+
+        /// <summary>
+        /// lblSkillCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSkillCount;
+
         // Projects Section Controls
         /// <summary>
         /// txtProjectTitle control.
@@ -67,6 +85,11 @@ namespace PortFolioAsp
         /// txtProjectUrl control.
         /// </summary>
         protected global::System.Web.UI.WebControls.TextBox txtProjectUrl;
+
+        /// <summary>
+        /// txtImagePath control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.TextBox txtImagePath;
 
         /// <summary>
         /// txtProjectDescription control.

@@ -261,6 +261,60 @@
             min-height: 100px;
         }
 
+        /* DropDownList Specific Styles */
+        select,
+        .form-group select,
+        [id*="ddl"],
+        .form-control {
+            padding: 0.8rem !important;
+            background: rgba(89, 178, 244, 0.1) !important;
+            border: 2px solid rgba(89, 178, 244, 0.3) !important;
+            border-radius: 0.5rem !important;
+            color: #ffffff !important;
+            font-size: 1rem !important;
+            transition: all 0.3s ease !important;
+            min-height: 45px !important;
+        }
+
+        select:focus,
+        .form-group select:focus,
+        [id*="ddl"]:focus,
+        .form-control:focus {
+            outline: none !important;
+            border-color: #59b2f4 !important;
+            box-shadow: 0 0 10px rgba(89, 178, 244, 0.3) !important;
+        }
+
+        /* DropDownList option styling */
+        select option,
+        [id*="ddl"] option,
+        .form-control option {
+            background: #1a1a2e !important;
+            color: #ffffff !important;
+            padding: 0.5rem !important;
+        }
+
+        select option:hover,
+        [id*="ddl"] option:hover,
+        .form-control option:hover {
+            background: #59b2f4 !important;
+            color: #ffffff !important;
+        }
+
+        /* Ensure dropdown arrows are visible */
+        select::-ms-expand,
+        .form-control::-ms-expand {
+            background-color: #59b2f4;
+            border: none;
+            color: #ffffff;
+        }
+
+        /* Additional styling for better visibility */
+        .form-control option:checked {
+            background: #59b2f4 !important;
+            color: #ffffff !important;
+        }
+
         /* Button Styles */
         .btn {
             padding: 0.8rem 1.5rem;
@@ -577,7 +631,7 @@
                             </div>
                             <div>
                                 <div class="card-title">Total Projects</div>
-                                <div class="card-value">12</div>
+                                <div class="card-value"><asp:Label ID="lblProjectCount" runat="server" Text="0"></asp:Label></div>
                             </div>
                         </div>
                     </div>
@@ -589,7 +643,7 @@
                             </div>
                             <div>
                                 <div class="card-title">Skills</div>
-                                <div class="card-value">15</div>
+                                <div class="card-value"><asp:Label ID="lblSkillCount" runat="server" Text="0"></asp:Label></div>
                             </div>
                         </div>
                     </div>
@@ -640,7 +694,7 @@
                     </div>
                     <div class="form-group">
                         <label>Project Type</label>
-                        <asp:DropDownList ID="ddlProjectType" runat="server">
+                        <asp:DropDownList ID="ddlProjectType" runat="server" CssClass="form-control">
                             <asp:ListItem Value="">Select Type</asp:ListItem>
                             <asp:ListItem Value="Web Development">Web Development</asp:ListItem>
                             <asp:ListItem Value="Mobile App">Mobile App</asp:ListItem>
@@ -656,6 +710,10 @@
                         <label>Project URL</label>
                         <asp:TextBox ID="txtProjectUrl" runat="server" placeholder="https://example.com"></asp:TextBox>
                     </div>
+                    <div class="form-group">
+                        <label>Image Path (Optional)</label>
+                        <asp:TextBox ID="txtImagePath" runat="server" placeholder="Resources/images/project-image.png (leave empty for default)"></asp:TextBox>
+                    </div>
                     <div class="form-group" style="grid-column: span 2;">
                         <label>Project Description</label>
                         <asp:TextBox ID="txtProjectDescription" runat="server" TextMode="MultiLine" placeholder="Describe your project..."></asp:TextBox>
@@ -664,18 +722,27 @@
                 
                 <div class="btn-group">
                     <asp:Button ID="btnAddProject" runat="server" Text="Add Project" CssClass="btn btn-success" OnClick="btnAddProject_Click" />
-                    <asp:Button ID="btnUpdateProject" runat="server" Text="Update Project" CssClass="btn btn-primary" OnClick="btnUpdateProject_Click" />
-                    <asp:Button ID="btnDeleteProject" runat="server" Text="Delete Project" CssClass="btn btn-danger" OnClick="btnDeleteProject_Click" />
+                    <asp:Button ID="btnUpdateProject" runat="server" Text="Update Selected" CssClass="btn btn-primary" OnClick="btnUpdateProject_Click" OnClientClick="return validateProjectSelection('update');" />
+                    <asp:Button ID="btnDeleteProject" runat="server" Text="Delete Selected" CssClass="btn btn-danger" OnClick="btnDeleteProject_Click" OnClientClick="return validateProjectSelection('delete');" />
                 </div>
 
                 <div class="data-table">
-                    <asp:GridView ID="gvProjects" runat="server" AutoGenerateColumns="false" CssClass="table">
+                    <asp:GridView ID="gvProjects" runat="server" AutoGenerateColumns="false" CssClass="table" DataKeyNames="ID">
                         <Columns>
+                            <asp:TemplateField HeaderText="Select">
+                                <HeaderTemplate>
+                                    <asp:CheckBox ID="selectAllProjectsCheckbox" runat="server" onclick="toggleSelectAllProjects(this)" />
+                                </HeaderTemplate>
+                                <ItemTemplate>
+                                    <asp:CheckBox ID="chkSelectProject" runat="server" CssClass="rowCheckbox" onclick="highlightProjectRow(this)" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
                             <asp:BoundField DataField="ID" HeaderText="ID" />
                             <asp:BoundField DataField="Title" HeaderText="Title" />
                             <asp:BoundField DataField="Type" HeaderText="Type" />
                             <asp:BoundField DataField="Technologies" HeaderText="Technologies" />
                             <asp:BoundField DataField="URL" HeaderText="URL" />
+                            <asp:BoundField DataField="ImagePath" HeaderText="Image Path" />
                         </Columns>
                     </asp:GridView>
                 </div>
@@ -695,7 +762,7 @@
                     </div>
                     <div class="form-group">
                         <label>Skill Category</label>
-                        <asp:DropDownList ID="ddlSkillCategory" runat="server">
+                        <asp:DropDownList ID="ddlSkillCategory" runat="server" CssClass="form-control">
                             <asp:ListItem Value="">Select Category</asp:ListItem>
                             <asp:ListItem Value="Programming Languages">Programming Languages</asp:ListItem>
                             <asp:ListItem Value="Frameworks">Frameworks</asp:ListItem>
@@ -764,13 +831,21 @@
                 
                 <div class="btn-group">
                     <asp:Button ID="btnAddEducation" runat="server" Text="Add Education" CssClass="btn btn-success" OnClick="btnAddEducation_Click" />
-                    <asp:Button ID="btnUpdateEducation" runat="server" Text="Update Education" CssClass="btn btn-primary" OnClick="btnUpdateEducation_Click" />
-                    <asp:Button ID="btnDeleteEducation" runat="server" Text="Delete Education" CssClass="btn btn-danger" OnClick="btnDeleteEducation_Click" />
+                    <asp:Button ID="btnUpdateEducation" runat="server" Text="Update Selected" CssClass="btn btn-primary" OnClick="btnUpdateEducation_Click" OnClientClick="return validateEducationSelection('update');" />
+                    <asp:Button ID="btnDeleteEducation" runat="server" Text="Delete Selected" CssClass="btn btn-danger" OnClick="btnDeleteEducation_Click" OnClientClick="return validateEducationSelection('delete');" />
                 </div>
 
                 <div class="data-table">
-                    <asp:GridView ID="gvEducation" runat="server" AutoGenerateColumns="false" CssClass="table">
+                    <asp:GridView ID="gvEducation" runat="server" AutoGenerateColumns="false" CssClass="table" DataKeyNames="ID">
                         <Columns>
+                            <asp:TemplateField HeaderText="Select">
+                                <HeaderTemplate>
+                                    <asp:CheckBox ID="selectAllEducationCheckbox" runat="server" onclick="toggleSelectAllEducation(this)" />
+                                </HeaderTemplate>
+                                <ItemTemplate>
+                                    <asp:CheckBox ID="chkEducationSelect" runat="server" CssClass="rowCheckbox" onclick="highlightEducationRow(this)" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
                             <asp:BoundField DataField="ID" HeaderText="ID" />
                             <asp:BoundField DataField="Institution" HeaderText="Institution" />
                             <asp:BoundField DataField="Degree" HeaderText="Degree" />
@@ -797,7 +872,7 @@
                     </div>
                     <div class="form-group">
                         <label>Photo Category</label>
-                        <asp:DropDownList ID="ddlPhotoCategory" runat="server">
+                        <asp:DropDownList ID="ddlPhotoCategory" runat="server" CssClass="form-control">
                             <asp:ListItem Value="">Select Category</asp:ListItem>
                             <asp:ListItem Value="Portrait">Portrait</asp:ListItem>
                             <asp:ListItem Value="Landscape">Landscape</asp:ListItem>
@@ -919,8 +994,14 @@
             // Show selected section
             document.getElementById(sectionName).classList.add('active');
             
-            // Add active class to clicked nav item
-            event.target.classList.add('active');
+            // Add active class to the correct nav item
+            var targetNavItem = document.querySelector(`a[onclick="showSection('${sectionName}')"]`);
+            if (targetNavItem) {
+                targetNavItem.classList.add('active');
+            } else if (event && event.target) {
+                // Fallback for click events
+                event.target.classList.add('active');
+            }
             
             // Update page title
             var titles = {
@@ -995,6 +1076,166 @@
         // Confirm delete function
         function confirmDelete() {
             return confirm('Are you sure you want to delete the selected messages?');
+        }
+
+        // Projects-specific functions
+        function toggleSelectAllProjects(selectAllCheckbox) {
+            var table = document.getElementById('<%= gvProjects.ClientID %>');
+            var checkboxes = table.querySelectorAll('input[type="checkbox"][id*="chkSelectProject"]');
+            
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = selectAllCheckbox.checked;
+                highlightProjectRow(checkboxes[i]);
+            }
+        }
+
+        function highlightProjectRow(checkbox) {
+            var row = checkbox.closest('tr');
+            if (checkbox.checked) {
+                row.classList.add('selected');
+            } else {
+                row.classList.remove('selected');
+            }
+
+            updateSelectAllProjectsCheckbox();
+        }
+
+        function updateSelectAllProjectsCheckbox() {
+            var table = document.getElementById('<%= gvProjects.ClientID %>');
+            var checkboxes = table.querySelectorAll('input[type="checkbox"][id*="chkSelectProject"]');
+            var selectAllCheckbox = table.querySelector('input[type="checkbox"][id*="selectAllProjectsCheckbox"]');
+            
+            if (!selectAllCheckbox) return;
+
+            var checkedCount = 0;
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    checkedCount++;
+                }
+            }
+
+            if (checkedCount === 0) {
+                selectAllCheckbox.checked = false;
+                selectAllCheckbox.indeterminate = false;
+            } else if (checkedCount === checkboxes.length) {
+                selectAllCheckbox.checked = true;
+                selectAllCheckbox.indeterminate = false;
+            } else {
+                selectAllCheckbox.checked = false;
+                selectAllCheckbox.indeterminate = true;
+            }
+        }
+
+        function confirmDeleteProjects() {
+            return confirm('Are you sure you want to delete the selected projects?');
+        }
+
+        function validateProjectSelection(action) {
+            var table = document.getElementById('<%= gvProjects.ClientID %>');
+            var checkboxes = table.querySelectorAll('input[type="checkbox"][id*="chkSelectProject"]');
+            var selectedCount = 0;
+            
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    selectedCount++;
+                }
+            }
+            
+            console.log('Selected count: ' + selectedCount);
+            
+            if (selectedCount === 0) {
+                alert('Please select at least one project by checking the checkbox.');
+                return false;
+            }
+            
+            if (action === 'update' && selectedCount > 1) {
+                alert('Please select only one project for updating.');
+                return false;
+            }
+            
+            if (action === 'delete') {
+                return confirm('Are you sure you want to delete the selected project(s)?');
+            }
+            
+            return true;
+        }
+
+        // Education-specific functions
+        function toggleSelectAllEducation(selectAllCheckbox) {
+            var table = document.getElementById('<%= gvEducation.ClientID %>');
+            var checkboxes = table.querySelectorAll('input[type="checkbox"][id*="chkEducationSelect"]');
+            
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = selectAllCheckbox.checked;
+                highlightEducationRow(checkboxes[i]);
+            }
+        }
+
+        function highlightEducationRow(checkbox) {
+            var row = checkbox.closest('tr');
+            if (checkbox.checked) {
+                row.classList.add('selected');
+            } else {
+                row.classList.remove('selected');
+            }
+
+            updateSelectAllEducationCheckbox();
+        }
+
+        function updateSelectAllEducationCheckbox() {
+            var table = document.getElementById('<%= gvEducation.ClientID %>');
+            var checkboxes = table.querySelectorAll('input[type="checkbox"][id*="chkEducationSelect"]');
+            var selectAllCheckbox = table.querySelector('input[type="checkbox"][id*="selectAllEducationCheckbox"]');
+            
+            if (!selectAllCheckbox) return;
+
+            var checkedCount = 0;
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    checkedCount++;
+                }
+            }
+
+            if (checkedCount === 0) {
+                selectAllCheckbox.checked = false;
+                selectAllCheckbox.indeterminate = false;
+            } else if (checkedCount === checkboxes.length) {
+                selectAllCheckbox.checked = true;
+                selectAllCheckbox.indeterminate = false;
+            } else {
+                selectAllCheckbox.checked = false;
+                selectAllCheckbox.indeterminate = true;
+            }
+        }
+
+        function validateEducationSelection(action) {
+            var table = document.getElementById('<%= gvEducation.ClientID %>');
+            var checkboxes = table.querySelectorAll('input[type="checkbox"][id*="chkEducationSelect"]');
+            var selectedCount = 0;
+            
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    selectedCount++;
+                }
+            }
+            
+            console.log('Selected education count: ' + selectedCount);
+            
+            if (selectedCount === 0) {
+                alert('Please select at least one education record by checking the checkbox.');
+                return false;
+            }
+            
+            if (action === 'update' && selectedCount > 1) {
+                alert('Please select only one education record for updating.');
+                return false;
+            }
+            
+            if (action === 'delete') {
+                return confirm('Are you sure you want to delete the selected education record(s)?');
+            }
+            
+            return true;
         }
     </script>
 </asp:Content>

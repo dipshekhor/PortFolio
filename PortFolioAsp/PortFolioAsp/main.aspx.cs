@@ -19,6 +19,7 @@ namespace PortFolioAsp
             if (!IsPostBack)
             {
                 lblContactMessage.Visible = false;
+                LoadProjects();
             }
         }
 
@@ -191,5 +192,160 @@ namespace PortFolioAsp
             txtContactSubject.Text = "";
             txtContactMessage.Text = "";
         }
+
+        #region Projects Management
+        private void LoadProjects()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    // First check if table exists and has data
+                    conn.Open();
+                    
+                    // Check if table exists
+                    string checkTableQuery = @"SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES 
+                                              WHERE TABLE_NAME = 'Projects'";
+                    using (SqlCommand checkCmd = new SqlCommand(checkTableQuery, conn))
+                    {
+                        int tableExists = (int)checkCmd.ExecuteScalar();
+                        if (tableExists == 0)
+                        {
+                            // Table doesn't exist, create it and insert sample data
+                            CreateProjectsTableAndData();
+                            return;
+                        }
+                    }
+                    
+                    // Check if table has data
+                    string checkDataQuery = "SELECT COUNT(*) FROM Projects";
+                    using (SqlCommand checkCmd = new SqlCommand(checkDataQuery, conn))
+                    {
+                        int recordCount = (int)checkCmd.ExecuteScalar();
+                        if (recordCount == 0)
+                        {
+                            // Table exists but no data, insert sample data
+                            InsertSampleProjects();
+                        }
+                    }
+                    
+                    // Now load projects
+                    string query = @"SELECT Title, Type, Technologies, URL, Description, 
+                                    ISNULL(ImagePath, 'Resources/images/default-project.png') as ImagePath 
+                                    FROM Projects ORDER BY DateCreated DESC";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        rptProjects.DataSource = dt;
+                        rptProjects.DataBind();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // If any error, create table and insert sample data
+                CreateProjectsTableAndData();
+            }
+        }
+
+        private void CreateProjectsTableAndData()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    
+                    // Create table
+                    string createTableQuery = @"CREATE TABLE Projects (
+                                              ID int IDENTITY(1,1) PRIMARY KEY,
+                                              Title nvarchar(200) NOT NULL,
+                                              Type nvarchar(100),
+                                              Technologies nvarchar(500),
+                                              URL nvarchar(500),
+                                              Description nvarchar(1000),
+                                              ImagePath nvarchar(500),
+                                              DateCreated datetime DEFAULT GETDATE()
+                                          )";
+                    using (SqlCommand cmd = new SqlCommand(createTableQuery, conn))
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    
+                    // Insert sample projects
+                    InsertSampleProjects();
+                }
+            }
+            catch { }
+        }
+
+        private void InsertSampleProjects()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    
+                    string insertQuery = @"INSERT INTO Projects (Title, Type, Technologies, URL, Description, ImagePath, DateCreated) 
+                                         VALUES (@Title, @Type, @Technologies, @URL, @Description, @ImagePath, @DateCreated)";
+
+                    // Project 1: Web Portfolio
+                    using (SqlCommand cmd = new SqlCommand(insertQuery, conn))
+                    {
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@Title", "Web Portfolio");
+                        cmd.Parameters.AddWithValue("@Type", "Web Development");
+                        cmd.Parameters.AddWithValue("@Technologies", "HTML, CSS, JavaScript");
+                        cmd.Parameters.AddWithValue("@URL", "https://github.com/dipshekhor/portfolio");
+                        cmd.Parameters.AddWithValue("@Description", "A responsive personal portfolio website built with HTML, CSS, and JavaScript featuring modern design and smooth animations.");
+                        cmd.Parameters.AddWithValue("@ImagePath", "Resources/images/screencapture-127-0-0-1-5500-PortFolio-main-html-2025-08-01-21_47_24.png");
+                        cmd.Parameters.AddWithValue("@DateCreated", DateTime.Now.AddDays(-30));
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    // Project 2: Employee Management System
+                    using (SqlCommand cmd = new SqlCommand(insertQuery, conn))
+                    {
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@Title", "Employee Management System App For Desktop");
+                        cmd.Parameters.AddWithValue("@Type", "Desktop App");
+                        cmd.Parameters.AddWithValue("@Technologies", "Java, JavaFX, MySQL");
+                        cmd.Parameters.AddWithValue("@URL", "https://github.com/dipshekhor/EmployeeManagementSystem");
+                        cmd.Parameters.AddWithValue("@Description", "An employee management application with user authentication, real-time updates, and intuitive drag-and-drop functionality.");
+                        cmd.Parameters.AddWithValue("@ImagePath", "Resources/images/Screenshot 2025-08-09 124843.png");
+                        cmd.Parameters.AddWithValue("@DateCreated", DateTime.Now.AddDays(-20));
+                        cmd.ExecuteNonQuery();
+                    }
+                    
+                    // Reload projects after insertion
+                    LoadProjects();
+                }
+            }
+            catch { }
+        }
+
+        public string GetTechTags(string technologies)
+        {
+            if (string.IsNullOrEmpty(technologies))
+                return "";
+
+            string[] techArray = technologies.Split(',');
+            string result = "";
+            
+            foreach (string tech in techArray)
+            {
+                string cleanTech = tech.Trim();
+                if (!string.IsNullOrEmpty(cleanTech))
+                {
+                    result += $"<span class='tech-tag'>{cleanTech}</span>";
+                }
+            }
+            
+            return result;
+        }
+        #endregion
     }
 }
